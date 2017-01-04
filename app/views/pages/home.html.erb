@@ -1,6 +1,37 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!--First create a welcome message-->
+<!--Second Style Sheets-->
+<head>
+<link rel="stylesheet" type="text/css" href="application.css">
+</head>
+
+<h1>Welcome To Lawrence Field's StartUp Institute's Web Developement Assessment</h1>
+<h2>This is the Home Page</h2>
+</br>
+<h2>You will enter a message to send an SMS to a number of your choice</h2>
+
+<!--Create the Form -->
 
 <%= form_tag("/sms/send", method: "post") do %>
 <!-- add form elements here -->
+
+<!--User Input fields -->
+
+<!--User Input message -->
+<%= label_tag(:message, "Please enter the message you want to send out.") %>
+</br>
+<%= text_field(:message, :user_message) %>
+</br>
+</br>
+
+<!-- User Input phone number -->
+<%= label_tag(:user, "Please input the phone number you want to send the message to.") %>
+</br>
+<%= telephone_field(:user, :phone) %>
+</br>
+</br>
+
+<!-- Submit Button -->
+<%= submit_tag "Submit" %>
+</br>
+
 <% end %>
